@@ -3,7 +3,7 @@
 
 module.exports.home = (req,res)=>{
     
-    res.render('pages/moviesList');
+    res.render('pages/home');
     
 }
 

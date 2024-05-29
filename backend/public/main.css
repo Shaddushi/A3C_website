@@ -36,7 +36,7 @@ header, footer{
     justify-content: center;
 
 
-    background: darkred;
+    background: darkslateblue;
     color: white;
 }
 
@@ -58,6 +58,8 @@ header a:hover {
     color: inherit ;
 }
 
+
+
 #content{
     padding: 10px;
 
@@ -75,10 +77,9 @@ header a:hover {
 
 #content .scrollable{
     width: 100%;
-
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     overflow: auto;
 }
@@ -90,3 +91,67 @@ header a:hover {
 .btn-dark:hover{
     background: #21143d;
 }
+
+
+
+
+
+.part_outside_right,.part_outside_left{
+    margin-bottom: 200px;
+    position: relative;
+  }
+  
+  .part_outside_right::before {
+    position: absolute;
+    bottom: 0px;
+    
+    border-bottom: solid 40px whitesmoke;
+    border-right: 100vw solid rgba(0,0,0,0);
+    
+    content: '';
+  }
+
+  .part_outside_left::before {
+    position: absolute;
+    top: 0px;
+    
+    border-top: solid 40px whitesmoke;
+    border-right: 100vw solid rgba(0,0,0,0);
+    
+    content: '';
+  }
+  
+  .part_outside_right::after {
+    top: 0px;
+    position: absolute;
+    
+    border-top: solid 40px whitesmoke;
+    border-left: 100vw solid rgba(0,0,0,0);
+    
+    content: '';
+  }
+
+  .part_outside_left::after {
+    bottom: 0px;
+    position: absolute;
+    
+    border-bottom: solid 40px whitesmoke;
+    border-left: 100vw solid rgba(0,0,0,0);
+    
+    content: '';
+  }
+  
+  
+  .part_inside_right {
+    height: 300px;
+    padding: 60px 1em;
+    
+    background: #92BFB1;
+  }
+
+  .part_inside_left {
+    height: 300px;
+    padding: 60px 1em;
+    
+    background: #CEA07E;
+  }
