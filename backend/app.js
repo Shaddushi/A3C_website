@@ -22,8 +22,11 @@ require("./controllers/mongoose_init")
 // --- ROUTAGE ---
 
 const homeRouter = require('./routes/A3CRouter')
-app.use('/', homeRouter)
-
+app.get('/', function(req, res) {
+    res.redirect('/Home');
+   });
+app.use('/Home', homeRouter)
+app.use('*', homeRouter)
 // -- LANCEMENT DU SERVEUR ---
 app.listen(port, ()=>{
     console.log(`Le server écoute sur http://127.0.0.1:${port}`);

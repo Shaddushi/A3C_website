@@ -7,3 +7,8 @@ module.exports.home = (req,res)=>{
     
 }
 
+module.exports.errorpage = (req,res)=>{
+    
+    res.render('pages/404page.ejs');
+    
+}

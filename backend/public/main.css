@@ -12,19 +12,15 @@ html{
 }
 
 body{
-    margin: 0 auto;
 
     background: whitesmoke;
 
     display: flex;
     flex-direction: column;
     text-align: center;
+    
 }
 
-a{
-    color: white ;
-    text-decoration: none;
-}
 
 header, footer{
     height: 50px;
@@ -36,7 +32,7 @@ header, footer{
     justify-content: center;
 
 
-    background: darkslateblue;
+    background: rgb(81, 70, 156);
     color: white;
 }
 
@@ -61,7 +57,6 @@ header a:hover {
 
 
 #content{
-    padding: 10px;
 
     flex: 1;
 
@@ -81,7 +76,7 @@ header a:hover {
     display: flex;
     flex-direction: column;
 
-    overflow: auto;
+    overflow-x: hidden;
 }
 
 #main-title{
@@ -92,66 +87,50 @@ header a:hover {
     background: #21143d;
 }
 
+.side_by_side{
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
 
+#title-main{
+  position: relative;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-left: 100px;
+}
 
-
-
-.part_outside_right,.part_outside_left{
-    margin-bottom: 200px;
-    position: relative;
-  }
+#title-main::before{
+  position: absolute;
+  width: 220px;
+  height: 5px;
+  background-color: rgb(81, 70, 156);
+  margin-top: 37px;
   
-  .part_outside_right::before {
-    position: absolute;
-    bottom: 0px;
-    
-    border-bottom: solid 40px whitesmoke;
-    border-right: 100vw solid rgba(0,0,0,0);
-    
-    content: '';
-  }
+  content: '';
+}
 
-  .part_outside_left::before {
-    position: absolute;
-    top: 0px;
-    
-    border-top: solid 40px whitesmoke;
-    border-right: 100vw solid rgba(0,0,0,0);
-    
-    content: '';
-  }
-  
-  .part_outside_right::after {
-    top: 0px;
-    position: absolute;
-    
-    border-top: solid 40px whitesmoke;
-    border-left: 100vw solid rgba(0,0,0,0);
-    
-    content: '';
-  }
+#title-main::after{
+  position: absolute;
+  width: 230px;
+  height: 5px;
+  background-color: rgb(81, 70, 156);
+  margin-top: 45px;
+  content: '';
+}
 
-  .part_outside_left::after {
-    bottom: 0px;
-    position: absolute;
-    
-    border-bottom: solid 40px whitesmoke;
-    border-left: 100vw solid rgba(0,0,0,0);
-    
-    content: '';
-  }
-  
-  
-  .part_inside_right {
-    height: 300px;
-    padding: 60px 1em;
-    
-    background: #92BFB1;
-  }
+.side_by_side div #text-main{
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  padding-top: 50px;
+}
 
-  .part_inside_left {
-    height: 300px;
-    padding: 60px 1em;
-    
-    background: #CEA07E;
-  }
+.side_by_side img{
+  padding: 50px;
+  width: 45%;
+}
