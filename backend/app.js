@@ -22,9 +22,7 @@ require("./controllers/mongoose_init")
 // --- ROUTAGE ---
 
 const homeRouter = require('./routes/A3CRouter')
-app.get('/', function(req, res) {
-    res.redirect('/Home');
-   });
+app.use('/',homeRouter)
 app.use('/Home', homeRouter)
 app.use('*', homeRouter)
 // -- LANCEMENT DU SERVEUR ---
