@@ -11,6 +11,8 @@ html{
     background: black;
 }
 
+
+
 body{
 
     background: whitesmoke;
@@ -58,6 +60,7 @@ header a:hover {
 }
 
 #footer{
+  
   margin-bottom: 0;
   width: 100%;
   height: auto;
@@ -90,6 +93,26 @@ header a:hover {
 	grid-template-columns: 33% 33% 33%;
 	margin: auto;
 }
+*::-webkit-scrollbar {
+  background-color: transparent;
+  width: 15px;
+}
+
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 4px solid transparent;
+  background-color: rgba(0,0,0,0.2);
+  background-clip: content-box;
+}
+#main{
+  width: 100%;
+}
+
 
 /* partie dans le layout */
 
@@ -98,6 +121,7 @@ header a:hover {
   min-height: 300px;
   bottom: 0;
   margin: 0;
+  
 }
 
 #content{
@@ -115,6 +139,7 @@ header a:hover {
 }
 
 .scrollable{
+  
     flex: 1;
     width: 100%;
     height: 100%;
@@ -122,6 +147,8 @@ header a:hover {
     flex-direction: column;
     text-align: left;
     overflow-x: hidden;
+    overflow-y: visible;
+    
 }
 
 

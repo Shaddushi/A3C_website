@@ -1,10 +1,13 @@
-//const comments = require("../models/Comments");
+const Commentary = require("../models/Comments");
 
 
 module.exports.home = (req,res)=>{
-    
-    res.render('pages/home');
-    
+    Commentary.find()
+    .then(comments => {
+        console.log(comments)
+        res.render('pages/home',{comments});
+    })
+    .catch(error => res.status(4000).send(error))
 }
 
 module.exports.redirect = (req,res)=>{
