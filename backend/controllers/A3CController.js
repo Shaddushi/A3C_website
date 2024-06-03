@@ -4,7 +4,6 @@ const Commentary = require("../models/Comments");
 module.exports.home = (req,res)=>{
     Commentary.find()
     .then(comments => {
-        console.log(comments)
         res.render('pages/home',{comments});
     })
     .catch(error => res.status(4000).send(error))

@@ -138,6 +138,9 @@ header a:hover {
     text-align: left;
 }
 
+a { color: inherit; }
+
+
 .scrollable{
   
     flex: 1;
@@ -207,7 +210,12 @@ header a:hover {
   padding: 50px;
   width: 45%;
 }
-
+/*
+mongodb+srv://honoreduportail:Shaddushi59@cluster0.nzoryog.mongodb.net/
+*/
+.part_outside_left_3 .side_by_side {
+  padding-bottom: 0;
+}
 
 /* barre pour le home */
 

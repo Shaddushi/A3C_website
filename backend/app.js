@@ -1,7 +1,9 @@
+
+
 const port = process.env.PORT || 3001
 const express = require('express');
 const app = express();
-
+const dotenv = require('dotenv')
 // dossier public (pour le css, etc.)
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -20,11 +22,12 @@ require("./controllers/mongoose_init")
 
 
 // --- ROUTAGE ---
-
+dotenv.config()
 const homeRouter = require('./routes/A3CRouter')
 app.use('/',homeRouter)
 app.use('/Home', homeRouter)
 app.use('*', homeRouter)
+
 // -- LANCEMENT DU SERVEUR ---
 app.listen(port, ()=>{
     console.log(`Le server écoute sur http://127.0.0.1:${port}`);
