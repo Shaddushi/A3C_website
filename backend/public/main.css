@@ -43,7 +43,7 @@ header, footer{
 
 header{
     height: 100px;
-
+    margin: 0;
     justify-content: space-between;
 
 
@@ -151,9 +151,12 @@ a { color: inherit; }
     text-align: left;
     overflow-x: hidden;
     overflow-y: visible;
-    
+    scrollbar-width: none;
 }
 
+.scrollable ::-webkit-scrollbar-track{
+  background-color: transparent;
+}
 
 
 /* Partie texte et image du home */
@@ -279,7 +282,7 @@ mongodb+srv://honoreduportail:Shaddushi59@cluster0.nzoryog.mongodb.net/
 }
   
 @media (prefers-reduced-motion: no-preference) {
-  .side_by_side img,.part_outside_left_3 .side_by_side div,.part_outside_left_2 .side_by_side div {
+  #comments_main div,.side_by_side img,.part_outside_left_3 .side_by_side div,.part_outside_left_2 .side_by_side div {
     animation: scale-a-lil linear both;
     animation-timeline: view();
     animation-range: 0vh 45vh;
@@ -287,5 +290,89 @@ mongodb+srv://honoreduportail:Shaddushi59@cluster0.nzoryog.mongodb.net/
 }
 
 
+/* section commentaire */
 
+
+
+#comments_main{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background-clip: content-box;
+  align-items: center;
+}
+
+#comments_title{
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-bottom: 30px;
+}
+
+#comments_title::after{
+  position: absolute;
+  width: 505px;
+  height: 5px;
+  background-color: #32936F;
+  margin-left: -25px;
+  margin-top: 70px;
+  
+  content: '';
+}
+
+#comments_title::before{
+  position: absolute;
+  width: 480px;
+  height: 5px;
+  background-color: #32936F;
+  margin-left: -10px;
+  margin-top: 60px;
+  
+  content: '';
+}
+
+
+#comments{
+  position: relative;
+  display: grid;
+  height: 100%;
+  width: 70%;
+	grid-template-rows: 33% 33% 33%;
+	grid-template-columns: 40% 40%;
+	margin: auto;
+  place-self: center;
+  align-items: center;
+  column-gap: 20%;
+}
+
+#comments div{
+  margin: 20px;
+}
+
+.single_comment{
+  border-bottom: solid #32936F 5px;
+  border-right: solid #32936F 1px;
+  border-left: solid #32936F 1px;
+  background-color: #404E5C;
+  color: rgb(212, 211, 211);
+  border-radius: 10px;
+  min-height: 100px;
+}
+
+
+
+#comment_username{
+  text-align: right;
+  padding: 10px;
+  font-size: 1.1em;
+}
+
+
+#comment_texte{
+  padding: 10px;
+}
 

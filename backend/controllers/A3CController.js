@@ -2,9 +2,29 @@ const Commentary = require("../models/Comments");
 
 
 module.exports.home = (req,res)=>{
+
+    
+
     Commentary.find()
     .then(comments => {
-        res.render('pages/home',{comments});
+        let i = 0;
+        let tab = new Set([])
+        if(comments.length < 6){
+            res.render('pages/home',{comments});
+        }
+        else{
+            while(i < 6 ){
+                let a = Math.floor(Math.random() * (comments.length ));
+                if(!(tab.has(comments[a]))){
+                    tab.add(comments[a]);
+                    i++;
+                }
+            }
+            comments = tab
+            res.render('pages/home',{comments});
+        }
+
+        
     })
     .catch(error => res.status(4000).send(error))
 }
