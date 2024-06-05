@@ -21,6 +21,11 @@ app.use(express.urlencoded({extended:false}));
 require("./controllers/mongoose_init")
 
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
 // --- ROUTAGE ---
 dotenv.config()
 const homeRouter = require('./routes/A3CRouter')

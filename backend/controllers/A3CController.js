@@ -35,6 +35,19 @@ module.exports.redirect = (req,res)=>{
     
 }
 
+module.exports.create = async (req,res)=>{
+    
+    const {name,comment,note} = req.body;
+    const commentary = new Commentary({
+        name: name,
+        comment:comment,
+        note:note
+    })
+    commentary.save();
+
+    res.redirect('/home');
+}
+
 module.exports.errorpage = (req,res)=>{
     
     res.render('pages/404page.ejs');
