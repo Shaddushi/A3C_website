@@ -6,7 +6,7 @@ const A3CController = require('../controllers/A3CController')
 router.get('/', A3CController.redirect);
 router.get('/Home', A3CController.home);
 router.get('*', A3CController.errorpage);
-router.post('/Home', A3CController.create);
+router.post('/add', A3CController.create);
 
 
 module.exports = router;

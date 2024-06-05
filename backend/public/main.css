@@ -286,10 +286,10 @@ mongodb+srv://honoreduportail:Shaddushi59@cluster0.nzoryog.mongodb.net/
 }
   
 @media (prefers-reduced-motion: no-preference) {
-  #comments_main div,.side_by_side img,.part_outside_left_3 .side_by_side div,.part_outside_left_2 .side_by_side div {
+  #comments_main button,#comments_main textarea,#comments_main div,.side_by_side img,.part_outside_left_3 .side_by_side div,.part_outside_left_2 .side_by_side div {
     animation: scale-a-lil linear both;
     animation-timeline: view();
-    animation-range: 0vh 45vh;
+    animation-range: 0vh 40vh;
   }
 }
 
@@ -351,12 +351,13 @@ mongodb+srv://honoreduportail:Shaddushi59@cluster0.nzoryog.mongodb.net/
   display: grid;
   height: 100%;
   width: 70%;
-	grid-template-rows: 33% 33% 33%;
+	grid-row: span 2;
 	grid-template-columns: 40% 40%;
 	margin: auto;
   place-self: center;
   align-items: center;
   column-gap: 20%;
+  
   margin-bottom: 70px;
 }
 
@@ -372,6 +373,7 @@ mongodb+srv://honoreduportail:Shaddushi59@cluster0.nzoryog.mongodb.net/
   color: rgb(212, 211, 211);
   border-radius: 10px;
   min-height: 100px;
+  margin: 20px;
 }
 
 
@@ -405,4 +407,37 @@ mongodb+srv://honoreduportail:Shaddushi59@cluster0.nzoryog.mongodb.net/
   width: 21px;
   height: 21px;
   margin-right: 10px;
+}
+
+#holder_name_star{
+  position: relative;
+  display: grid;
+  height: 100%;
+  width: 70%;
+	grid-template-rows: 100%;
+	grid-template-columns: 40% 30%;
+  align-items: center;
+  margin: 50px;
+  column-gap: 30%;
+  place-content: center;
+}
+
+#addCommentForm{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+}
+
+#holder_name_star #star_rating{
+  min-width: 180px;
+  
+  text-align: right;
+}
+
+#comment{
+  margin: 50px;
+  margin-top: 0;
+  width: 70%;
+  min-height: 100px;
 }

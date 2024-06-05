@@ -15,8 +15,6 @@ const expressLayouts = require('express-ejs-layouts'); //npm install express-ejs
 app.use(expressLayouts);
 app.set('layout', '../views/layouts/layout') ; // définit le layout par défaut
 
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
 
 require("./controllers/mongoose_init")
 
@@ -31,6 +29,7 @@ dotenv.config()
 const homeRouter = require('./routes/A3CRouter')
 app.use('/',homeRouter)
 app.use('/Home', homeRouter)
+app.use('/add', homeRouter)
 app.use('*', homeRouter)
 
 // -- LANCEMENT DU SERVEUR ---

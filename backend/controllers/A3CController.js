@@ -35,17 +35,68 @@ module.exports.redirect = (req,res)=>{
     
 }
 
-module.exports.create = async (req,res)=>{
-    
-    const {name,comment,note} = req.body;
-    const commentary = new Commentary({
-        name: name,
-        comment:comment,
-        note:note
-    })
-    commentary.save();
 
-    res.redirect('/home');
+
+//pour create
+module.exports.create = async (req,res)=>{
+    if(!(!req.body) && (req.body.note >=3 ||req.body.note === "")){
+        let {name,comment,note} = req.body
+        if(note === ""){
+            if(name === ""){
+                const commentary = new Commentary({
+                    ...{content},
+                })
+                commentary.save();
+            }
+            else{
+                if(comment === ""){
+                    const commentary = new Commentary({
+                        ...{name},
+                    })
+                    commentary.save();
+                }
+                else{
+                    const commentary = new Commentary({
+                        ...{name,comment},
+                    })
+                    commentary.save();
+                }
+                
+            }
+           
+        }
+        else{
+            if(name === ""){
+                if(comment === ""){
+                    const commentary = new Commentary({
+                        ...{note},
+                    })
+                    commentary.save();
+                }
+                else{
+                    const commentary = new Commentary({
+                        ...{note,comment},
+                    })
+                    commentary.save();
+                }
+            }
+            else{
+                if(comment === ""){
+                    const commentary = new Commentary({
+                        ...{name,note},
+                    })
+                    commentary.save();
+                }
+                else{
+                    const commentary = new Commentary({
+                        ...{name,comment,note},
+                    })
+                    commentary.save();
+                }
+            }
+        }
+    }
+    res.redirect('/home')
 }
 
 module.exports.errorpage = (req,res)=>{

@@ -85,8 +85,7 @@
     <div id="comments_title">  Avis de nos clients : </div>
 
 
-    <div id="comments" >
-
+    <div id="comments"> 
         <% comments.forEach((elem)=>{ %>
             <div class="single_comment">
                 <div id = "comment_text">
@@ -107,72 +106,28 @@
                 </div>
             </div>
         <% })%>
-        
     </div>
 
     <div id="create_comments_title"> Donnez nous votre avis !</div>
-
-    <form action="/Home" method="POST" name="addCommentForm" id="addCommentForm" enctype="multipart/form-data" >
-        <div id = "star_rating">
-            <img src="/images/star_filled.png" class="star" id="star_1" onclick="new_note(this)" value="1">
-            <img src="/images/star_filled.png" class="star" id="star_2" onclick="new_note(this)" value="2">
-            <img src="/images/star_filled.png" class="star" id="star_3" onclick="new_note(this)" value="3">
-            <img src="/images/star_filled.png" class="star" id="star_4" onclick="new_note(this)" value="4">
-            <img src="/images/star_filled.png" class="star" id="star_5" onclick="new_note(this)" value="5">
-        </div>
-            <label for="name" >name</label>
-            <input id="name" name="name" class="form-control" onkeydown="if(event.keyCode === 13) { return false; }">
-            <label for="comment">comment</label>
-            <textarea id="comment" name="comment" class="form-control" ></textarea>
-            <input id="note" type="number" name="note" class="form-control" style="display: none;">
-            <button type="submit" class="btn btn-primary">Save</button>
+    <form action="/add" method="POST" name="addCommentForm" id="addCommentForm" enctype="multipart/form-data" >
+            <div id="holder_name_star">
+                <input id="name" name="name" class="form-control" placeholder="Saisissez votre nom... (optionel)" onkeydown="if(event.keyCode === 13) { return false; }">
+                <div id = "star_rating">
+                    <img src="/images/star_filled.png" class="star" id="star_1" onclick="new_note(this)" value="1">
+                    <img src="/images/star_filled.png" class="star" id="star_2" onclick="new_note(this)" value="2">
+                    <img src="/images/star_filled.png" class="star" id="star_3" onclick="new_note(this)" value="3">
+                    <img src="/images/star_filled.png" class="star" id="star_4" onclick="new_note(this)" value="4">
+                    <img src="/images/star_filled.png" class="star" id="star_5" onclick="new_note(this)" value="5">
+                </div>
+            </div>
+            <textarea id="comment" name="comment" class="form-control" placeholder="Ajoutez un commentaire"></textarea>
+            <input id="note" type="number" name="note" class="form-control" style="display: none;" min="0" max="5">
+            <button type="submit" class="btn btn-primary">Enregistrer le commentaire</button>
     </form>
     
 
     </div>
+    </div>
 
 </div>
 
-
-<script>
-
-    const div_rating = document.getElementById("star_rating")
-    const note = document.getElementById("note")
-    
-    function new_note(img) {
-        let number = img.getAttribute("value");
-        for (let i = 0; i < number ; i++){
-            div_rating.children[i].src = "/images/star_filled.png";
-        }
-        for (let i = number; i < 5 ; i++){
-            div_rating.children[i].src = "/images/star_empty.png";
-        }
-        note.value = number;
-    }
-
-
-
-    const form = document.getElementById('addCommentForm');
-    
-    form.addEventListener('submit', async (event) => {
-      const nameInput = document.getElementById('name');
-      const commentInput = document.getElementById('comment');
-      const noteInput = document.getElementById('note');
-
-      const name = nameInput.value.trim();
-      const comment = commentInput.value.trim();
-      const note = noteInput.value.trim();
-      const response = await fetch('/home', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name,comment,note }),
-      });
-      if (!response.ok) {
-        errorMessage.textContent = 'Failed to add data';
-        return;
-      }
-      window.location.href = '/';
-    });
-    </script>
