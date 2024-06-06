@@ -1,5 +1,4 @@
 
-    
     function new_note(img) {
         const div_rating = document.getElementById("star_rating")
         const note = document.getElementById("note")
@@ -14,7 +13,7 @@
     }
 
 
-//Pour ajouter un
+//Pour ajouter un commentaire
 
 
 const form = document.getElementById('addCommentForm');

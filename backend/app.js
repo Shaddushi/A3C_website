@@ -30,6 +30,8 @@ const homeRouter = require('./routes/A3CRouter')
 app.use('/',homeRouter)
 app.use('/Home', homeRouter)
 app.use('/add', homeRouter)
+app.use('/more/MyUnisoft',homeRouter)
+app.use('/more/tools',homeRouter)
 app.use('*', homeRouter)
 
 // -- LANCEMENT DU SERVEUR ---

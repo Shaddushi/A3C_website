@@ -30,10 +30,22 @@ module.exports.home = (req,res)=>{
 }
 
 module.exports.redirect = (req,res)=>{
-    res.redirect('/home');
+    res.redirect('/Home');
 }
 
+module.exports.errorpage = (req,res)=>{
+    
+    res.render('pages/404page.ejs');
+    
+}
 
+module.exports.MyUnisoft = (req,res)=>{
+    res.render('pages/MyUnisoft.ejs')
+}
+
+module.exports.tools = (req,res)=>{
+    res.render('pages/tools.ejs')
+}
 
 //to create a commentary
 module.exports.create = async (req,res)=>{
@@ -98,8 +110,3 @@ module.exports.create = async (req,res)=>{
     res.redirect('/home')
 }
 
-module.exports.errorpage = (req,res)=>{
-    
-    res.render('pages/404page.ejs');
-    
-}
