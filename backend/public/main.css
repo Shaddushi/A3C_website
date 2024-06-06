@@ -49,13 +49,47 @@ header, footer{
 }
 
 header{
-    min-height: 120px;
+    min-height: 160px;
     margin: 0;
-    justify-content: space-between;
     width: 100%;
     font-size: 1.5em;
     z-index: 5;
+    align-items: center;
 }
+
+
+header nav img{
+  width: 220px;
+  height: 220px;
+  margin: 30px;  
+}
+
+header nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+header nav div{
+  margin: 15px;  
+}
+
+.visible{
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s linear, opacity 0.3s ease-in-out;
+}
+
+.invisible{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s linear, opacity 0.3s ease-in-out;
+}
+
+
+
+
 
 .sticky{
   position: fixed;
@@ -70,10 +104,6 @@ footer{
 
 header > *{
     margin: 0px 5px;
-}
-
-header a:hover {
-    color: inherit ;
 }
 
 #footer{

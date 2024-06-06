@@ -30,15 +30,14 @@ module.exports.home = (req,res)=>{
 }
 
 module.exports.redirect = (req,res)=>{
-    
     res.redirect('/home');
-    
 }
 
 
 
-//pour create
+//to create a commentary
 module.exports.create = async (req,res)=>{
+    // Yes it's rigged what about it ?
     if(!(!req.body) && (req.body.note >=3 ||req.body.note === "")){
         let {name,comment,note} = req.body
         if(note === ""){
