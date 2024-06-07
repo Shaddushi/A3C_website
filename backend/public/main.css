@@ -55,6 +55,7 @@ header{
     font-size: 1.5em;
     z-index: 5;
     align-items: center;
+    
 }
 
 
@@ -68,7 +69,7 @@ header nav{
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 75px;
+  margin-right: 75  px;
   
 }
 
@@ -510,4 +511,61 @@ mongodb+srv://honoreduportail:Shaddushi59@cluster0.nzoryog.mongodb.net/
   width: 100%;
   background-clip: padding-box;
   align-items: center;
+}
+
+@media (max-width:1230px) {
+  .side_by_side{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side_by_side img{
+    display: flex;
+    align-items: center;
+    width: 65%;
+    height: 65%;
+  }
+
+  #comments{
+    grid-row: span 2;
+    grid-template-columns: 80%;
+    justify-content: center;
+  }
+
+
+}
+
+@media (max-width:740px) {
+
+    #comment_note_username{
+      display: flex;
+      flex-direction: column;
+    }
+
+    #addCommentForm textarea{
+      
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      margin-bottom: 50px;
+    
+    }
+
+    #holder_name_star{
+      margin: 0;
+      margin-bottom: 50px;
+      width: 100%;
+      
+    }
+
+    #footer #img_A3C{
+      display: none;
+    }
+}
+
+
+@media (max-width:575px){
+  #star_rating{
+    margin-right: 25px;
+  }
 }
