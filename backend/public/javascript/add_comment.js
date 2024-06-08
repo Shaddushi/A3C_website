@@ -1,4 +1,6 @@
 
+/* Change la couleur des étoiles selon l'étoile cliqué et modifie l'insert pour la note */
+
     function new_note(img) {
         const div_rating = document.getElementById("star_rating")
         const note = document.getElementById("note")
@@ -43,13 +45,3 @@ form.addEventListener('submit', async (event) => {
 
 
 
-  window.onwheel = e => {
-    const header = document.getElementById("header");
-    if(e.deltaY >= 0){
-      header.classList.remove("visible");
-      header.classList.add("invisible");
-    } else {
-      header.classList.add("visible");
-      header.classList.remove("invisible");
-    }
-  }

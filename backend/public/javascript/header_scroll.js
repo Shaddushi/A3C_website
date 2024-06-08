@@ -1,3 +1,5 @@
+/* fait disparaitre le header lors que scrolldown et réapparaitre lors du scrollup */
+
 window.onwheel = e => {
     const header = document.getElementById("header");
     if(e.deltaY >= 0){

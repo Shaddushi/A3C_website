@@ -33,7 +33,7 @@
         <div class="side_by_side" style="background: linear-gradient(rgb(212, 211, 211) 0%,rgb(212, 211, 211) 90% ,rgb(201, 199, 199) 95% ) ">
             <img src="/images/compta3_crop.png" id="front_images">
             <div>
-                <div id="title-main"">
+                <div id="title-main">
                     Lorem ipsum
                 </div>
 
@@ -57,7 +57,7 @@
         <div class="side_by_side" style="background: rgb(201, 199, 199); ">
             
             <div>
-                <div id="title-main"">
+                <div id="title-main">
                     Lorem ipsum
                 </div>
 
@@ -88,7 +88,7 @@
     <div id="comments"> 
         <% comments.forEach((elem)=>{ %>
             <div class="single_comment">
-                <div id = "comment_text">
+                <div id = "comment_text" style="white-space: pre-line;">
                     " <%= elem.comment%> "
                 </div>
                 <div id="comment_note_username">
@@ -120,7 +120,7 @@
                     <img src="/images/star_filled.png" class="star" id="star_5" onclick="new_note(this)" value="5">
                 </div>
             </div>
-            <textarea id="comment" name="comment" class="form-control" placeholder="Ajoutez un commentaire"></textarea>
+            <textarea id="comment" wrap="hard" name="comment" class="form-control" placeholder="Ajoutez un commentaire" style="white-space: pre;"></textarea>
             <input id="note" type="number" name="note" class="form-control" style="display: none;" min="0" max="5">
             <button type="submit" class="btn btn-primary">Enregistrer le commentaire</button>
     </form>

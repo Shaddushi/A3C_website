@@ -49,8 +49,20 @@ module.exports.tools = (req,res)=>{
 
 //to create a commentary
 module.exports.create = async (req,res)=>{
+    let i = 0;
+    Commentary.find()
+    .then(comments => {
+        comments.forEach(element => {
+            if(element.comment === req.body.comment){
+                i ++;
+            }
+        });
+
+    })
+
     // Yes it's rigged what about it ?
-    if(!(!req.body) && (req.body.note >=3 ||req.body.note === "")){
+
+    if(!(!req.body) && i < 3 &&(req.body.note >=3 ||req.body.note === "")){
         let {name,comment,note} = req.body
         if(note === ""){
             if(name === ""){
