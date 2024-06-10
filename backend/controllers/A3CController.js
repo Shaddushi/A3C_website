@@ -66,10 +66,16 @@ module.exports.create = async (req,res)=>{
         let {name,comment,note} = req.body
         if(note === ""){
             if(name === ""){
-                const commentary = new Commentary({
-                    ...{content},
-                })
-                commentary.save();
+                if(comment === ""){
+                    //vraiment au cas ou
+                    ;
+                }
+                else{
+                    const commentary = new Commentary({
+                        ...{content},
+                    })
+                    commentary.save();
+                }
             }
             else{
                 if(comment === ""){
