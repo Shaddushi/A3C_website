@@ -127,7 +127,7 @@ header > *{
   justify-content: space-between;
 }
 
-#footer div{
+#footer div,#footer a{
   margin-top: 10px;
   margin-right: auto;
   margin-left: auto;
@@ -378,6 +378,7 @@ a { color: inherit; }
   flex-direction: column;
   width: fit-content;
   margin-bottom: 30px;
+  min-width: 570px;
 }
 
 #comments_title::after,#create_comments_title::after{
@@ -501,6 +502,7 @@ a { color: inherit; }
 
 #comment{
   margin: 50px;
+  margin-bottom: 0;
   margin-top: 0;
   width: 70%;
   min-height: 100px;
@@ -537,6 +539,8 @@ a { color: inherit; }
 #MyUnisoft_Title:hover,#MyUnisoft_Title:focus,#MyUnisoft_Title:active{
   color: #404E5C !important;
 }
+
+
 
 
 #MyUnisoft{
@@ -669,33 +673,44 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   padding-top: 100px;
-  padding-left: 100px;
   width: fit-content;
 }
 
 #title-main-info::before{
   position: absolute;
-  width: 265px;
+  width: 275px;
   height: 5px;
   background-color: #32936F;
   margin-top: 37px;
-  
+  margin-left: -5px;
   content: '';
 }
 
 #title-main-info::after{
   position: absolute;
-  width: 280px;
+  width: 295px;
   height: 5px;
   background-color: #32936F;
   margin-top: 45px;
+  margin-left: -15px;
   content: '';
 }
 
 
+.link_tools{
+  text-decoration: underline;
+}
 
+.link_tools:hover,.link_tools:focus,.link_tools:active{
+  color: #404E5C !important;
+  text-decoration: underline;
 
+}
 
+#center_tools{
+  display: flex;
+  justify-content: center;
+}
 
 
 
@@ -739,7 +754,7 @@ a { color: inherit; }
       margin: 0;
       width: 100%;
       height: 100%;
-      margin-bottom: 50px;
+      
     
     }
 

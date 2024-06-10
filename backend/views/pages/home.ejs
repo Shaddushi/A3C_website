@@ -120,7 +120,11 @@
                     <img src="/images/star_filled.png" class="star" id="star_5" onclick="new_note(this)" value="5">
                 </div>
             </div>
-            <textarea id="comment" wrap="hard" name="comment" class="form-control" placeholder="Ajoutez un commentaire" style="white-space: pre;"></textarea>
+            <textarea id="comment" wrap="hard" name="comment" class="form-control" placeholder="Ajoutez un commentaire" style="white-space: pre;" maxlength="250" style="margin-bottom: 0;"></textarea>
+            <div id="the-count" style="margin-bottom: 50px; align-self: self-end;padding-right: 20%;">
+                <span id="current">0</span>
+                <span id="maximum">/ 250</span>
+              </div>
             <input id="note" type="number" name="note" class="form-control" style="display: none;" min="0" max="5">
             <button type="submit" class="btn btn-primary">Enregistrer le commentaire</button>
     </form>
